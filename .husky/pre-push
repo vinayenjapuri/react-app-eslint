@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Running ESLint before push..."
+cd eslint-enabler
+npm run lint
+if [ $? -ne 0 ]; then
+  echo "Linting failed. Push aborted."
+  exit 1
+fi
+echo "Linting successful. Proceeding with push."

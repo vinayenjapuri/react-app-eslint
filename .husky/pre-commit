@@ -4,7 +4,6 @@
 echo "Running ESLint..."
 cd eslint-enabler
 npm run lint
-npm run prettier
 if [ $? -ne 0 ]; then
   echo "Linting failed. Commit aborted."
   exit 1
